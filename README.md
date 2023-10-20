@@ -48,7 +48,7 @@ sh inf_moe_8x.sh
 
 Latent-based Text-to-Image Generation(eg. SD1.5) also suffers from VAE's reconstruction accuracy, so the FA_VAE we proposed in SR can also be useful. We customize and train a FA_VAE for SD1.5. To be specific, lr input and lr-conditioned fuse layers are removed, as shown in the following figure. 
 
-For practice, the only thing we need to do is to replace the original decoder with FA_VAE decoder. Download SD1.5 base models(eg. [realv](https://huggingface.co/SG161222/Realistic_Vision_V5.1_noVAE/tree/main)) and [kl-f8/fa_vae.pth](https://huggingface.co/amandaa/moe_sr/tree/main/first_stage_models/kl-f8) and set path in [get latent.py]() and [decode.py](), then run the following command.
+For practice, the only thing we need to do is to replace the original decoder with FA_VAE decoder. Download SD1.5 base models(eg. [realv](https://huggingface.co/SG161222/Realistic_Vision_V5.1_noVAE/tree/main)) and [kl-f8/fa_vae.pth](https://huggingface.co/amandaa/moe_sr/tree/main/first_stage_models/kl-f8) and set path in [get latent.py](https://github.com/tencent-ailab/Frequency_Aug_VAE_MoESR/blob/main/vae_txt2img_inf/get_latent.py#11) and [decode.py](https://github.com/tencent-ailab/Frequency_Aug_VAE_MoESR/blob/main/vae_txt2img_inf/decode.py#13), then run the following command.
 
 <p align="center">
     <img src="assets/txt2img_strcut.png">
