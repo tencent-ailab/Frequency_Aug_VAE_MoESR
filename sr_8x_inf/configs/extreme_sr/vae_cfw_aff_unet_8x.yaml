@@ -1,6 +1,6 @@
 model:
   target: "VQModelResiUnet"
-  resume: False # False for 4x, True for 8x
+  resume: False 
   amp: True
   base_learning_rate: 1.0e-4
 
@@ -9,7 +9,7 @@ model:
     resolution: 512
     lossconfig:
       params:
-        disc_start: 1000 # 1000 for 4x, -1 for 8x
+        disc_start: 1000 
 
     ddconfig:
       double_z: false
