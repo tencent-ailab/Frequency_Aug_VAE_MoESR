@@ -1,0 +1,22 @@
+model:
+  target: "AutoencoderKLAFF"
+  input_type: "image" 
+  resume: False
+  amp: True
+  params:
+    embed_dim: 4
+    ddconfig:
+      timesteps: 16
+      skip: 1
+      double_z: True
+      z_channels: 4
+      resolution: 256
+      in_channels: 3
+      out_ch: 3
+      ch: 128
+      ch_mult: [ 1, 2, 4, 4 ]
+      num_res_blocks: 2
+      attn_resolutions: [ ]
+      dropout: 0.0
+    
+

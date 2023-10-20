@@ -1,0 +1,27 @@
+model:
+  target: "VQModelResiUnet"
+  resume: False # False for 4x, True for 8x
+  amp: True
+  base_learning_rate: 1.0e-4
+
+  params:
+    embed_dim: 4
+    resolution: 512
+    lossconfig:
+      params:
+        disc_start: 1000 # 1000 for 4x, -1 for 8x
+
+    ddconfig:
+      double_z: false
+      z_channels: 3
+      resolution: 512
+      in_channels: 3
+      out_ch: 3
+      ch: 128
+      ch_mult: [ 1, 2, 4 ]
+      num_res_blocks: 2
+      attn_resolutions: [ ]
+      dropout: 0.0
+
+
+

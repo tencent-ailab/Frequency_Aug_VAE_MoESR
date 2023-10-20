@@ -1,0 +1,62 @@
+sf: 8
+model:
+  base_learning_rate: 5.0e-05
+  target: ldm.models.diffusion.ddpm.LatentDiffusionExtremeSREWA
+  params:
+    linear_start: 0.0015
+    linear_end: 0.0155
+    log_every_t: 100
+    timesteps: 1000
+    loss_type: l2
+    first_stage_key: image
+    cond_stage_key: LR_image
+    image_size: 128
+    channels: 3
+    concat_mode: true
+    cond_stage_trainable: false
+    use_usm: False
+    time_stage: true
+    ignore_keys: ['jpeger']
+    unet_config:
+      target: ldm.modules.diffusionmodules.openaimodel.UNetModelWithFFNMoe
+      params:
+        image_size: 128
+        in_channels: 6
+        out_channels: 3
+        model_channels: 160
+        attention_resolutions:
+        - 16
+        - 8
+        num_res_blocks: 2
+        channel_mult:
+        - 1
+        - 2
+        - 2
+        - 4
+        num_head_channels: 32
+        is_inference: False
+    first_stage_config:
+      target: ldm.models.autoencoder.VQModelInterface
+      params:
+        embed_dim: 3
+        n_embed: 8192
+        monitor: train/rec_loss
+        ddconfig:
+          double_z: false
+          z_channels: 3
+          resolution: 512
+          in_channels: 3
+          out_ch: 3
+          ch: 128
+          ch_mult:
+          - 1
+          - 2
+          - 4
+          num_res_blocks: 2
+          attn_resolutions: []
+          dropout: 0.0
+        lossconfig:
+          target: torch.nn.Identity
+    cond_stage_config:
+      target: torch.nn.Identity
+    
