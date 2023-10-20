@@ -112,6 +112,7 @@ Furthermore, we validate the effectiveness of FA_VAE on Text-to-Image Generation
 ## Citation
 
 Please cite us if our work is useful for your research.
+
     @inproceedings{luo2023Image,
         author = {Luo, Feng and Xiang, Jinxi and Zhang, Jun and Han, Xiao and Yang, Wei},
         title = {Image Super-resolution via Latent Diffusion: a Sampling-space Mixture of Experts and Frequency-augmented Decoder Approach},
