@@ -18,10 +18,10 @@ git clone https://github.com/tencent-ailab/Frequency_Aug_VAE_MoESR.git
 cd MOE_SR
 
 # Create a conda environment and activate it
-conda env create --file environment.yaml
+conda env create --file my_environment.yaml
 conda activate moe_sr
 
-# Install xformers
+# Install xformers(optionally)
 conda install xformers -c xformers/label/dev
 
 # Install taming
@@ -100,7 +100,7 @@ Benefiting from the frequency-augmented decoder, it can be seen that distortion,
 | ---- | ----  |  ----  | ----  |  ----  |
 |  sd15 original  | 27.64 |  0.8376  | 0.0524 | 19.62 |
 |  ours  | 28.50 | 0.8563 | 0.0424 | 15.71 |
-|
+
 
 ### Txt2Img with FA_VAE
 Furthermore, we validate the effectiveness of FA_VAE on Text-to-Image Generation. As shown in the figure, it can also restore the distortion compared with the original VAE. Note that, we only replace the SD1.5's decoder with FA_VAE, which means it is compatible with all SD1.5 base models. 
@@ -112,6 +112,12 @@ Furthermore, we validate the effectiveness of FA_VAE on Text-to-Image Generation
 ## Citation
 
 Please cite us if our work is useful for your research.
+    @inproceedings{luo2023Image,
+        author = {Luo, Feng and Xiang, Jinxi and Zhang, Jun and Han, Xiao and Yang, Wei},
+        title = {Image Super-resolution via Latent Diffusion: a Sampling-space Mixture of Experts and Frequency-augmented Decoder Approach},
+        booktitle = {arXiv preprint arXiv:2310.12004},
+        year = {2023}
+    }
 
 
 ## License

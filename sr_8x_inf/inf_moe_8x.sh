@@ -12,7 +12,7 @@ num_node=0
 sample_steps=200
 
 decoder_config="configs/extreme_sr/vae_cfw_aff_unet_8x.yaml"
-decoder_ckpt="models/first_stage_models/vq-f4/vae_aff.pth"
+decoder_ckpt="models/first_stage_models/vq-f4/fa_vae.pth"
 
 export HOST_NUM=1
 export INDEX=0

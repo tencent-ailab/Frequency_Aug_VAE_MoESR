@@ -8,7 +8,7 @@ from diffusers import StableDiffusionPipeline
 
  
 base_model_name = 'realv'
-base_model = "path/to/your/base/model/"
+base_model = "path/to/your/base/model/Realistic_Vision_V5.1_noVAE"
 device_id = 0
 res = 512
 

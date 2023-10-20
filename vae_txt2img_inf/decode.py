@@ -7,10 +7,10 @@ from omegaconf import OmegaConf
 import torch
 from torch import autocast
 
-from vae_txt2img_inf.models.my_autoencoder import AutoencoderKLAFF
+from models.autoencoder import AutoencoderKLAFF
 
 
-vae_ckpt = 'path/to/vae_aff.pth'
+vae_ckpt = 'path/to/fa_vae.pth'
 latent_path = "txt2img/latent_realv_512"
 vae_name = 'AutoencoderKLAFF'
 exp_name = 'vaeaff'

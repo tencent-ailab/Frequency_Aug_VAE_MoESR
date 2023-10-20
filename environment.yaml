@@ -26,8 +26,8 @@ dependencies:
     - invisible-watermark>=0.1.5
     - streamlit-drawable-canvas==0.8.0
     - torchmetrics==0.6.0
-    - transformers==4.19.2
-    - accelerator==0.23.0
+    - transformers==4.34.1
+    - accelerate==0.23.0
     - diffusers==0.21.4
     - triton
     - matplotlib
